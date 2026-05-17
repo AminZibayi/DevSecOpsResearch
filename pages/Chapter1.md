@@ -103,7 +103,7 @@ layout: default
 Without structured context, agents suffer from "context drift" and hallucinations.
 
 <div class="grid grid-cols-3 gap-4 mt-4">
-  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center" data-id="ctx-sys">
     <div class="text-lg font-bold text-white mb-2">1. System Layer</div>
     <div class="text-sm text-gray-400">The base persona and safety rules defined by the harness.</div>
   </div>
@@ -113,15 +113,16 @@ Without structured context, agents suffer from "context drift" and hallucination
     <div class="text-sm text-gray-400">Constraints stored in `CLAUDE.md` or `agents.md` defining tech stack and "hard" rules.</div>
   </div>
   
-  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center" data-id="ctx-task">
     <div class="text-lg font-bold text-white mb-2">3. Task Layer</div>
     <div class="text-sm text-gray-400">The immediate prompt or spec defining the current session goal.</div>
   </div>
 </div>
 
-<FancyArrow from="(400, 420)" to="(400, 320)" color="var(--slidev-theme-accents-teal)" width="2" />
+<FancyArrow x1="340" y1="310" x2="380" y2="310" color="var(--slidev-theme-accents-teal)" width="2" />
+<FancyArrow x1="620" y1="310" x2="660" y2="310" color="var(--slidev-theme-accents-teal)" width="2" />
 
-<div class="mt-4 text-sm">
+<div class="mt-4 text-sm" data-id="ctx-gov">
   <strong>Context Governance:</strong> Agents must use deduplication and ranking tools (`grep`, `glob`) to prevent context window saturation.
 </div>
 

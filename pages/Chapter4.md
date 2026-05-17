@@ -17,19 +17,19 @@ Transforming linear SDLC into a **High-Velocity Feedback Loop**.
 
 <div class="flex justify-center mt-16 mb-12">
   <div class="flex items-center space-x-2">
-    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" id="w-plan">Plan</div>
+    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" data-id="w-plan">Plan</div>
     <div class="text-[var(--slidev-theme-accents-teal)] text-xl">→</div>
-    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]">Local</div>
+    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" data-id="w-local">Local</div>
     <div class="text-[var(--slidev-theme-accents-teal)] text-xl">→</div>
-    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]">CI</div>
+    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" data-id="w-ci">CI</div>
     <div class="text-[var(--slidev-theme-accents-teal)] text-xl">→</div>
-    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]">Build</div>
+    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" data-id="w-build">Build</div>
     <div class="text-[var(--slidev-theme-accents-teal)] text-xl">→</div>
-    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" id="w-deploy">Deploy</div>
+    <div class="bg-[var(--slidev-theme-code-background)] px-4 py-3 rounded-lg border border-[var(--slidev-theme-code-border)]" data-id="w-deploy">Deploy</div>
   </div>
 </div>
 
-<FancyArrow from="#w-deploy@bottom" to="#w-plan@bottom" color="var(--slidev-theme-accents-yellow)" width="3" bowing="0.3" arc="0.5">
+<FancyArrow x1="750" y1="250" x2="250" y2="250" color="var(--slidev-theme-accents-yellow)" width="3" bowing="0.3" arc="0.5">
   <template #tail>
     <div class="text-sm absolute mt-4 ml-40 font-bold bg-gray-800 px-2 py-1 rounded">Feedback & Self-Healing</div>
   </template>

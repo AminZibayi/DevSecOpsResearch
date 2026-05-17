@@ -16,7 +16,7 @@ layout: default
 The trajectory has been defined by reducing friction between ideation and production.
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg" data-id="devops">
     <div class="text-xl font-bold text-[var(--slidev-theme-accents-teal)] mb-4">DevOps (circa 2009)</div>
     <ul class="text-sm space-y-2">
       <li>Broke silos between development and operations.</li>
@@ -34,7 +34,7 @@ The trajectory has been defined by reducing friction between ideation and produc
   </div>
 </div>
 
-<FancyArrow from="(450, 300)" to="(550, 300)" color="var(--slidev-theme-accents-teal)" width="3" />
+<FancyArrow x1="480" y1="310" x2="520" y2="310" color="var(--slidev-theme-accents-teal)" width="3" />
 
 ---
 layout: default

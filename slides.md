@@ -14,9 +14,6 @@ themeConfig:
   accents-lightblue: "#15C2CB"
   accents-blue: "#5EADF2"
   accents-vulcan: "#0E131F"
----
-
----
 src: ./pages/Chapter0.md
 ---
 
@@ -51,6 +48,3 @@ src: ./pages/Chapter7.md
 ---
 src: ./pages/Chapter8.md
 ---
-
----
-src: ./pages/Appendices.md

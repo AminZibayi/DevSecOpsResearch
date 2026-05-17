@@ -215,9 +215,9 @@ Securing the pipeline requires defining explicit boundaries.
   </div>
 </div>
 
-<FancyArrow from="(230, 210)" to="(370, 210)" color="var(--slidev-theme-color)" width="2" />
-<FancyArrow from="(460, 210)" to="(600, 210)" color="var(--slidev-theme-color)" width="2" />
-<FancyArrow from="(700, 210)" to="(830, 210)" color="var(--slidev-theme-color)" width="2" />
+<FancyArrow x1="280" y1="310" x2="340" y2="310" color="var(--slidev-theme-color)" width="2" />
+<FancyArrow x1="460" y1="310" x2="520" y2="310" color="var(--slidev-theme-color)" width="2" />
+<FancyArrow x1="640" y1="310" x2="700" y2="310" color="var(--slidev-theme-color)" width="2" />
 
 <p class="text-sm text-center">
   <strong>Critical Note:</strong> The Data → Agent boundary is the "Injection Boundary", protected by the <strong>3-Gate Pattern</strong>.
