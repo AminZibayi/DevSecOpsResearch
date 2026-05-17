@@ -78,3 +78,11 @@ As Retrieval-Augmented Generation (RAG) becomes the standard for grounding AI ou
 *   **Permission-Aware Retrieval**: The vector database must implement fine-grained access control, ensuring that agents can only retrieve data that the requesting user is authorized to see.
 *   **Logical Partitioning**: Multi-tenant environments must strictly isolate embedding namespaces to prevent cross-context information leakage.
 *   **Groundedness Verification**: Implementing the **RAG Triad** (Relevance, Groundedness, Q&A relevance) to detect and filter out hallucinations or "poisoned" knowledge entries before they reach the final LLM output.
+
+## 3.10 Layer 9: Continuous Compliance & Audit (Evidence Layer)
+
+This layer automates the collection of artifacts required for regulatory certification.
+
+*   **Policy-as-Evidence**: Mapping OPA/Rego policy passes directly to **PCI DSS 4.0.1 Requirement 6.2.3** and **SOC 2 CC8.1**.
+*   **Immutable Evidence Store**: Automated archiving of signed SBOMs, SLSA provenance, and agent reasoning logs in a write-once repository.
+*   **Compliance-as-Code (CaC)**: Using agents to maintain a "Compliance Graph" that links every architectural component to its relevant regulatory controls (GDPR, HIPAA, NIST).

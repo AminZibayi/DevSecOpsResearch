@@ -29,6 +29,11 @@ Agents maintain the **Documentation** layer as a living artifact.
 *   **ADR Synthesis**: Agents generate Architecture Decision Records (ADRs) to track the reasoning behind design choices.
 *   **Project Memory**: Agents ingest and update `AgentDB` namespaces (e.g., `security-findings`, `test-gaps`), preserving context across sessions and ensuring that "forgotten" vulnerabilities are surfaced in future reviews.
 
+### 1.1.6 Compliance and Governance Assurance
+Agents serve as continuous compliance auditors throughout the SDLC.
+*   **Real-time Mapping**: Agents cross-reference generated code with regulatory requirements (e.g., mapping a new data-access module to **HIPAA §164.312(a)(1)**).
+*   **Evidence Collection**: Agents automatically generate the documentation needed for SOC 2 or PCI audits, such as proof of code review, signed commit logs, and dependency provenance (SLSA).
+
 ## 1.2 The Agent Harness: Claude Code, Copilot, Gemini CLI, and Config Bundles
 
 The **Agent Harness** is the runtime environment that provides the agent with its capabilities, tools, and identity. It serves as the interface between the LLM and the local development environment.

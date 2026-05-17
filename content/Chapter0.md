@@ -20,6 +20,8 @@ To ensure clarity throughout this report, the following terms are defined based 
 *   **Model Context Protocol (MCP)**: An open standard (introduced by Anthropic) that allows AI agents to securely connect to external data sources and tools (e.g., Google Drive, Slack, GitHub, local databases) through a standardized interface, acting as the "USB-C" for the agentic ecosystem.
 *   **Agentic Development Life Cycle (ADLC)**: An evolution of the SDLC that explicitly includes agentic phases: automated spec-to-code transformation, agent-led testing, and AI-driven self-healing CI/CD.
 *   **Slopsquatting**: A supply-chain attack vector specific to AI-native development, where attackers publish malicious packages that match the names of non-existent or "hallucinated" libraries frequently suggested by LLMs.
+*   **RAG Triad**: A framework for evaluating the quality of Retrieval-Augmented Generation outputs based on three metrics: **Context Relevance** (is the retrieved info useful?), **Groundedness** (is the answer based strictly on the context?), and **Answer Relevance** (does it answer the query?).
+*   **Safe-Chain**: A security pattern for validating package integrity in the supply chain, often requiring a minimum "package age" (e.g., 72 hours) and hash verification before installation.
 
 ## 0.3 Audience & How to Read This Report
 
@@ -35,7 +37,7 @@ The report follows a "Layered Defense" structure. We recommend reading Chapters 
 The findings in this report are synthesized from a systematic review of three distinct data tiers, ensuring that every recommendation is both practically viable and theoretically sound.
 
 ### Source Trust Hierarchy
-*   **Tier 1: Standards & Primary Docs**: Documentation from standards bodies (**OWASP Top 10 for LLM Applications 2025**, NIST SSDF, MITRE CWE) and core technology providers (GitHub, Anthropic, Nx, Sigstore).
+*   **Tier 1: Standards & Primary Docs**: Documentation from standards bodies (**OWASP Top 10 for LLM Applications 2025**, NIST SSDF, MITRE CWE), legal regulations (**GDPR**, **HIPAA**, **PCI DSS 4.0.1**), and core technology providers (GitHub, Anthropic, Nx, Sigstore).
 *   **Tier 2: Tooling & Practitioner Frameworks**: Official documentation and technical blogs from security vendors (Snyk, Semgrep, Checkmarx, TruffleHog) and open-source supply chain projects (SLSA, OpenSSF).
 *   **Tier 3: Academic & Expert Analysis**: Peer-reviewed research (IEEE, ACM), major security conference briefings (Black Hat, DEF CON), and deep-dive analyses from reputable security research firms (Trail of Bits, Project Zero).
 
