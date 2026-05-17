@@ -118,24 +118,25 @@ A 9-step "Layered Audit" upon Pull Request creation.
 
 ---
 layout: default
+zoom: 0.9
 ---
 
 # Build & Artifact Integrity
 
 Producing a fully secured and provenanced output.
 
-<div class="mt-4 space-y-4">
-  <div class="bg-[var(--slidev-theme-code-background)] p-5 rounded-lg border-l-4 border-[var(--slidev-theme-accents-teal)]">
+<div class="mt-3 space-y-3">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg border-l-4 border-[var(--slidev-theme-accents-teal)]">
     <h3 class="text-lg font-bold text-white">Deterministic Builds with Nx</h3>
     <p class="text-sm mt-1 text-gray-400">Nx Computation Hashing ensures that unchanged source and dependencies yield identical build output, preventing AI-induced "build drift".</p>
   </div>
   
-  <div class="bg-[var(--slidev-theme-code-background)] p-5 rounded-lg border-l-4 border-[var(--slidev-theme-accents-teal)]">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg border-l-4 border-[var(--slidev-theme-accents-teal)]">
     <h3 class="text-lg font-bold text-white">SBOM Generation</h3>
     <p class="text-sm mt-1 text-gray-400">`Syft` creates a CycloneDX 1.5 JSON artifact, acting as the verifiable ground truth for all AI-selected dependencies in the build.</p>
   </div>
 
-  <div class="bg-[var(--slidev-theme-code-background)] p-5 rounded-lg border-l-4 border-[var(--slidev-theme-accents-teal)]">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg border-l-4 border-[var(--slidev-theme-accents-teal)]">
     <h3 class="text-lg font-bold text-white">SLSA Attestation & Container Signing</h3>
     <p class="text-sm mt-1 text-gray-400">The Safe-Chain model links the artifact to specific GitHub Actions. The final image is signed via Sigstore/Cosign to ensure trust at runtime.</p>
   </div>
@@ -147,15 +148,15 @@ layout: default
 
 # Deployment & Runtime
 
-<div class="grid grid-cols-2 gap-5 mt-6">
-  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg">
-    <h3 class="text-lg font-bold text-[var(--slidev-theme-accents-lightblue)] mb-3">Admission Controllers</h3>
+<div class="grid grid-cols-2 gap-3 mt-3">
+  <div class="bg-[var(--slidev-theme-code-background)] p-3 rounded-lg">
+    <h3 class="text-base font-bold text-[var(--slidev-theme-accents-lightblue)] mb-1">Admission Controllers</h3>
     <p class="text-sm text-gray-300">Kubernetes validates the SBOM and cryptographic signatures. Images missing pipeline signatures are completely blocked from execution.</p>
   </div>
   
-  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg">
-    <h3 class="text-lg font-bold text-[var(--slidev-theme-accents-yellow)] mb-3">The 3-Gate Pattern</h3>
-    <p class="text-sm text-gray-300 mb-2">Runtime protection against MCP exploits via `ruflo-aidefence`:</p>
+  <div class="bg-[var(--slidev-theme-code-background)] p-3 rounded-lg">
+    <h3 class="text-base font-bold text-[var(--slidev-theme-accents-yellow)] mb-1">The 3-Gate Pattern</h3>
+    <p class="text-sm text-gray-300 mb-1">Runtime protection against MCP exploits via `ruflo-aidefence`:</p>
     <ol class="text-sm list-decimal ml-4 text-gray-300">
       <li>Pre-storage PII detection</li>
       <li>Token sanitization</li>
@@ -164,7 +165,7 @@ layout: default
   </div>
 </div>
 
-<div class="mt-4 p-4 bg-[var(--slidev-theme-code-background)] rounded-lg">
+<div class="mt-3 p-3 bg-[var(--slidev-theme-code-background)] rounded-lg">
   <h3 class="font-bold text-[var(--slidev-theme-accents-blue)]">RAG Quality Gates</h3>
   <p class="text-sm mt-1">The RAG Triad verifies Context Relevance, Groundedness (mitigating hallucinations), and Answer Relevance before responses reach the user.</p>
 </div>

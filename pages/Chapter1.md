@@ -81,16 +81,16 @@ layout: default
 
 The runtime environment bridging the LLM and the local dev environment.
 
-<div class="mt-4 p-4 bg-[var(--slidev-theme-code-background)] rounded-lg">
-  <h3 class="font-bold text-[var(--slidev-theme-accents-teal)] mb-4">Primary Harnesses</h3>
-  <ul class="text-sm space-y-4">
+<div class="mt-3 p-3 bg-[var(--slidev-theme-code-background)] rounded-lg">
+  <h3 class="font-bold text-[var(--slidev-theme-accents-teal)] mb-2">Primary Harnesses</h3>
+  <ul class="text-sm space-y-2">
     <li><strong>Claude Code:</strong> A specialized CLI emphasizing skill-based extensibility, allowing developers to mount security skills and MCP plugins.</li>
     <li><strong>GitHub Copilot & Gemini CLI:</strong> Deep IDE integration focusing on "autofix" capabilities integrated natively with cloud-native workflows.</li>
   </ul>
 </div>
 
-<div class="mt-6 p-4 border border-[var(--slidev-theme-code-border)] rounded-lg">
-  <h3 class="font-bold text-white mb-2">Config Bundles (e.g., `everything-claude-code`)</h3>
+<div class="mt-4 p-3 border border-[var(--slidev-theme-code-border)] rounded-lg">
+  <h3 class="font-bold text-white mb-1">Config Bundles (e.g., `everything-claude-code`)</h3>
   <p class="text-sm text-gray-300">Reduce "prompt engineering fatigue" by pre-loading Personas, Allowed Tools, and Safety Guards.</p>
 </div>
 

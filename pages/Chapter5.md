@@ -45,9 +45,9 @@ layout: default
 
 The deterministic "backbone" of the AI-native pipeline.
 
-<div class="mt-4 space-y-4">
+<div class="mt-3 space-y-3">
   <div>
-    <h3 class="font-bold text-xl text-[var(--slidev-theme-accents-teal)] border-b border-gray-700 pb-2 mb-3">SAST (Static Analysis)</h3>
+    <h3 class="font-bold text-xl text-[var(--slidev-theme-accents-teal)] border-b border-gray-700 pb-2 mb-2">SAST (Static Analysis)</h3>
     <ul class="text-sm space-y-2">
       <li><strong>CodeQL:</strong> Industry standard for semantic analysis across 10+ languages. Uncovers complex path chaining.</li>
       <li><strong>Semgrep:</strong> Lightweight, fast scanner ideal for custom "guardrail" patterns in monorepos.</li>
@@ -55,7 +55,7 @@ The deterministic "backbone" of the AI-native pipeline.
   </div>
 
   <div>
-    <h3 class="font-bold text-xl text-[var(--slidev-theme-accents-blue)] border-b border-gray-700 pb-2 mb-3">SCA (Software Composition)</h3>
+    <h3 class="font-bold text-xl text-[var(--slidev-theme-accents-blue)] border-b border-gray-700 pb-2 mb-2">SCA (Software Composition)</h3>
     <ul class="text-sm space-y-2">
       <li><strong>OWASP Dependency-Check:</strong> The primary build-fail gate against the NVD.</li>
       <li><strong>OSV-Scanner:</strong> Optimized for Go, Rust, and Python.</li>
@@ -64,7 +64,7 @@ The deterministic "backbone" of the AI-native pipeline.
   </div>
 
   <div>
-    <h3 class="font-bold text-xl text-[var(--slidev-theme-accents-yellow)] border-b border-gray-700 pb-2 mb-3">IaC & Container Scanning</h3>
+    <h3 class="font-bold text-xl text-[var(--slidev-theme-accents-yellow)] border-b border-gray-700 pb-2 mb-2">IaC & Container Scanning</h3>
     <p class="text-sm"><strong>Trivy</strong> for container vulnerabilities and misconfigurations; <strong>Checkov</strong> for Terraform/CloudFormation compliance violations.</p>
   </div>
 </div>
@@ -98,13 +98,14 @@ Managing dynamic AI dependencies and high-volume changes.
 
 ---
 layout: default
+zoom: 0.92
 ---
 
 # AI Security & Governance Tools
 
 A new class of tools designed specifically to govern the AI reasoning loop.
 
-<div class="mt-4 space-y-4">
+<div class="mt-2 space-y-2">
   <div class="flex items-start">
     <div class="bg-[var(--slidev-theme-accents-red)] p-2 rounded mr-4">🛡️</div>
     <div>
@@ -114,7 +115,7 @@ A new class of tools designed specifically to govern the AI reasoning loop.
   </div>
 
   <div class="flex items-start">
-    <div class="bg-[var(--slidev-theme-accents-teal)] p-2 rounded mr-4">🤖</div>
+    <div class="bg-[var(--slidev-theme-accents-teal)] p-2 rounded mr-4"></div>
     <div>
       <h3 class="font-bold text-lg text-white">claude-cybersecurity</h3>
       <p class="text-sm mt-1 text-gray-400">An AI skill that spawns 8 parallel specialist agents for context-aware audits (detects business logic flaws traditional SAST cannot).</p>
@@ -130,7 +131,7 @@ A new class of tools designed specifically to govern the AI reasoning loop.
   </div>
 
   <div class="flex items-start">
-    <div class="bg-[var(--slidev-theme-accents-yellow)] p-2 rounded mr-4">🚪</div>
+    <div class="bg-[var(--slidev-theme-accents-yellow)] p-2 rounded mr-4"></div>
     <div>
       <h3 class="font-bold text-lg text-white">MCP Gateway (IBM Pattern)</h3>
       <p class="text-sm mt-1 text-gray-400">A security proxy enforcing tool allowlists and preventing "Excessive Agency" across the organization.</p>
@@ -146,46 +147,46 @@ layout: default
 
 Understanding the maturity and strength of parallel testing strategies.
 
-<div class="mt-4 overflow-hidden rounded-lg border border-[var(--slidev-theme-code-border)]">
+<div class="mt-3 overflow-hidden rounded-lg border border-[var(--slidev-theme-code-border)]">
   <table class="w-full text-sm text-left">
     <thead class="bg-[var(--slidev-theme-code-background)]">
       <tr>
-        <th class="p-4">Feature</th>
-        <th class="p-4 text-[var(--slidev-theme-accents-blue)]">Deterministic SAST (CodeQL)</th>
-        <th class="p-4 text-[var(--slidev-theme-accents-yellow)]">AI Security Skill (Claude)</th>
-        <th class="p-4 text-[var(--slidev-theme-accents-teal)]">Supply-Chain Actions</th>
+        <th class="p-3">Feature</th>
+        <th class="p-3 text-[var(--slidev-theme-accents-blue)]">Deterministic SAST (CodeQL)</th>
+        <th class="p-3 text-[var(--slidev-theme-accents-yellow)]">AI Security Skill (Claude)</th>
+        <th class="p-3 text-[var(--slidev-theme-accents-teal)]">Supply-Chain Actions</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-[var(--slidev-theme-code-border)]">
       <tr>
-        <td class="p-4 font-bold text-white">Maturity</td>
-        <td class="p-4">Tier 1: Enterprise</td>
-        <td class="p-4 font-bold">Tier 3: Experimental</td>
-        <td class="p-4">Tier 2: Active OSS</td>
+        <td class="p-3 font-bold text-white">Maturity</td>
+        <td class="p-3">Tier 1: Enterprise</td>
+        <td class="p-3 font-bold">Tier 3: Experimental</td>
+        <td class="p-3">Tier 2: Active OSS</td>
       </tr>
       <tr>
-        <td class="p-4 font-bold text-white">Strength</td>
-        <td class="p-4">CWE Pattern Matching</td>
-        <td class="p-4">Business Logic & Design</td>
-        <td class="p-4">Supply Chain Integrity</td>
+        <td class="p-3 font-bold text-white">Strength</td>
+        <td class="p-3">CWE Pattern Matching</td>
+        <td class="p-3">Business Logic & Design</td>
+        <td class="p-3">Supply Chain Integrity</td>
       </tr>
       <tr>
-        <td class="p-4 font-bold text-white">False Positives</td>
-        <td class="p-4 text-green-400">Low (Rule-based)</td>
-        <td class="p-4 text-yellow-400">Variable (Context-aware)</td>
-        <td class="p-4 text-green-400">Very Low (Hash-based)</td>
+        <td class="p-3 font-bold text-white">False Positives</td>
+        <td class="p-3 text-green-400">Low (Rule-based)</td>
+        <td class="p-3 text-yellow-400">Variable (Context-aware)</td>
+        <td class="p-3 text-green-400">Very Low (Hash-based)</td>
       </tr>
       <tr>
-        <td class="p-4 font-bold text-white">Language Support</td>
-        <td class="p-4">Fixed (10+)</td>
-        <td class="p-4">Universal (LLM-based)</td>
-        <td class="p-4">Multi-stack</td>
+        <td class="p-3 font-bold text-white">Language Support</td>
+        <td class="p-3">Fixed (10+)</td>
+        <td class="p-3">Universal (LLM-based)</td>
+        <td class="p-3">Multi-stack</td>
       </tr>
       <tr>
-        <td class="p-4 font-bold text-white">Integration</td>
-        <td class="p-4">CI Gate</td>
-        <td class="p-4">Agent Skill / PR Bot</td>
-        <td class="p-4">Composite Action</td>
+        <td class="p-3 font-bold text-white">Integration</td>
+        <td class="p-3">CI Gate</td>
+        <td class="p-3">Agent Skill / PR Bot</td>
+        <td class="p-3">Composite Action</td>
       </tr>
     </tbody>
   </table>
