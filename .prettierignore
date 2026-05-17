@@ -1,0 +1,6 @@
+node_modules/
+dist/
+source/
+*.log
+AI_Native_DevSecOps.md
+.agents/

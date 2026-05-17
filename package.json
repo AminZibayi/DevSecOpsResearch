@@ -5,10 +5,20 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/merge_report.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write .",
+    "lint": "pnpm format && markdownlint \"content/*.md\"",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Amin Zibayi",
   "license": "",
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@10.24.0",
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "husky": "^9.1.7",
+    "markdownlint-cli": "^0.48.0",
+    "prettier": "^3.8.3"
+  }
 }

@@ -56,11 +56,11 @@ name: <name>
 imageSrc: <image url>
 position: <left or right>
 job: <job title>
-line1: 
-line2: 
-social1: 
-social2: 
-social3: 
+line1:
+line2:
+social1:
+social2:
+social3:
 ---
 ```
 

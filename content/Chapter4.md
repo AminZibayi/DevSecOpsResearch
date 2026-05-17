@@ -117,13 +117,17 @@ The security posture continues into the execution environment.
 Kubernetes admission controllers verify the SBOM and signature of images. Images missing a valid pipeline signature are blocked from deployment.
 
 ### 4.6.2 Continuous Monitoring & The 3-Gate Pattern
+
 Runtime tools (e.g., Falco) monitor for anomalous behavior. For applications using LLM agents, the **ruflo-aidefence 3-Gate Pattern** is applied:
+
 - **Gate 1**: Pre-storage PII detection.
 - **Gate 2**: Token sanitization.
 - **Gate 3**: Prompt-injection scanning before re-entry into an LLM.
 
 ### 4.6.3 RAG Quality & Groundedness Gates
+
 For systems utilizing Retrieval-Augmented Generation, we implement the **RAG Triad** as a runtime quality gate:
+
 1.  **Context Relevance**: Verify the retrieved snippets are relevant to the user query to prevent "Context Poisoning."
 2.  **Groundedness**: Ensure the agent's response is derived solely from the retrieved context, mitigating hallucinations.
 3.  **Answer Relevance**: Verify the final output addresses the user's intent without introducing tangential risks.

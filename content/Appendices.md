@@ -41,7 +41,7 @@ jobs:
         uses: ministryofjustice/devsecops-actions/sca@v1.5.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          dependency-review-config-file: ".github/dependency-review-config.yml"
+          dependency-review-config-file: '.github/dependency-review-config.yml'
 
       - name: AI-Native Security Audit
         run: |
@@ -73,9 +73,18 @@ jobs:
         "rule": "@nx/conformance/enforce-project-boundaries",
         "options": {
           "depConstraints": [
-            { "sourceTag": "scope:shared", "onlyDependOnProjectsWithTags": ["scope:shared"] },
-            { "sourceTag": "scope:admin", "onlyDependOnProjectsWithTags": ["scope:shared", "scope:admin"] },
-            { "sourceTag": "scope:client", "onlyDependOnProjectsWithTags": ["scope:shared", "scope:client"] }
+            {
+              "sourceTag": "scope:shared",
+              "onlyDependOnProjectsWithTags": ["scope:shared"]
+            },
+            {
+              "sourceTag": "scope:admin",
+              "onlyDependOnProjectsWithTags": ["scope:shared", "scope:admin"]
+            },
+            {
+              "sourceTag": "scope:client",
+              "onlyDependOnProjectsWithTags": ["scope:shared", "scope:client"]
+            }
           ]
         }
       }

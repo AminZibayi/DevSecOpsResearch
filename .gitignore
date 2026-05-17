@@ -1,4 +1,5 @@
 source/
+slidev
 node_modules/
 dist/
 .env
