@@ -5,7 +5,6 @@ dist/
 .env
 *.log
 .DS_Store
-pnpm-lock.yaml
 AI_Native_DevSecOps.md
 
 *.local
