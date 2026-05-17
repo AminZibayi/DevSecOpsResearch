@@ -31,7 +31,7 @@ jobs:
       pull-requests: write
       security-events: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
 
       - name: Setup Nx
