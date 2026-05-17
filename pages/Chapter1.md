@@ -3,8 +3,7 @@ layout: cover
 background: https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2070&auto=format&fit=crop
 ---
 
-# Chapter 1
-The AI-Native Development Paradigm
+# The AI-Native Development Paradigm
 
 Agents as first-class SDLC participants.
 
@@ -12,104 +11,41 @@ Agents as first-class SDLC participants.
 layout: default
 ---
 
-# 1.1 Agent Roles Across the SDLC
+# Agent Roles: Planning and Design
 
-Agents evolve from "tools" into "semi-autonomous contributors".
+Agents move beyond scripted automation to perform reasoning tasks early in the cycle.
 
-<div class="grid grid-cols-2 gap-8 mt-4">
-<div>
-
-- **Planning & Design**: Automated threat modeling (STRIDE) & secure requirements.
-- **Code Generation**: Refinement-phase ownership, secure scaffolding.
-- **Testing**: Agentic TDD, coverage-aware routing.
-
-</div>
-<div>
-
-- **Security Review**: Gather, Analyze, Recommend, Execute (GARE) parallel specialist agents.
-- **Documentation**: ADR synthesis, Project Memory (AgentDB namespaces).
-- **Compliance**: Real-time regulatory mapping, evidence collection for audits.
-
-</div>
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg" data-id="c1-design">
+    <h3 class="text-xl font-bold text-[var(--slidev-theme-accents-teal)] mb-4">Threat Modeling</h3>
+    <p class="text-sm">Using frameworks like <strong>STRIDE</strong>, agents analyze trust boundaries and data flows before any code is written.</p>
+  </div>
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg">
+    <h3 class="text-xl font-bold text-[var(--slidev-theme-accents-teal)] mb-4">Secure Requirements</h3>
+    <p class="text-sm">Agents generate functional and non-functional specifications that include security constraints by default (e.g., enforcing `auth` middleware).</p>
+  </div>
 </div>
 
 ---
 layout: default
 ---
 
-# 1.2 The Agent Harness & Config Bundles
+# Agent Roles: Code Generation & Testing
 
-The runtime environment bridging the LLM and the local environment.
-
-**Primary Harnesses**:
-- **Claude Code**: CLI focused on skill-based extensibility (e.g., `cybersecurity`).
-- **GitHub Copilot & Gemini CLI**: Deep IDE integration with "autofix" features.
-
-**Config Bundles** (e.g., `everything-claude-code`):
-Reduce "prompt fatigue" by pre-loading:
-- System Prompts (Personas)
-- Allowed Tools
-- Safety Guards
-
----
-layout: default
----
-
-# 1.3 Context Architecture
-
-Organized context prevents "drift" and hallucinations.
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-<div>
-
-**Three-Layer Instruction Framework**:
-1. **System**: Persona & safety rules.
-2. **Project**: `CLAUDE.md`, `agents.md` (Tech stack, hard rules).
-3. **Task**: Immediate prompt/spec.
-
-</div>
-<div>
-
-**AgentDB & Namespaces**:
-Persistent memory layers.
-- `security-patterns`
-- `test-gaps`
-- `claude-memories`
-
-*Deduplication & Ranking via `grep` and `glob`.*
-
-</div>
-</div>
-
----
-layout: section
----
-
-# 1.4 Spec-Driven vs Prompt-Driven
-
-Moving from conversational prompts to durable, version-controlled artifacts (`spec.md`).
-
----
-layout: default
----
-
-# 1.5 Non-Determinism & Repeatability
-
-LLMs are non-deterministic, posing risks to secure, repeatable builds.
-
-<div class="grid grid-cols-2 gap-6 mt-8">
+<div class="space-y-4 mt-4">
   <div>
-    <h3 class="text-xl font-bold text-[var(--slidev-theme-accents-red)]">Determinism Gates</h3>
-    <ul class="mt-4">
-      <li><strong>Linter Enforcement:</strong> Pass security linters before commit.</li>
-      <li><strong>Smoke Tests:</strong> Verify against signed manifests.</li>
+    <h3 class="text-lg font-bold text-[var(--slidev-theme-accents-blue)]">Code Generation & Refactoring</h3>
+    <ul class="text-sm mt-2 space-y-2">
+      <li><strong>Refinement-Phase Ownership:</strong> Tools like `ruflo-jujutsu` perform diff-aware refactoring, suggesting safer architectural patterns (e.g., replacing `execSync`).</li>
+      <li><strong>Scaffolding:</strong> Generating "secure-by-default" boilerplates with pre-configured linters and hooks.</li>
     </ul>
   </div>
+
   <div>
-    <h3 class="text-xl font-bold text-[var(--slidev-theme-accents-teal)]">Clamping Behavior</h3>
-    <ul class="mt-4">
-      <li><strong>Type Systems:</strong> TypeScript/Mypy prevents hallucinated types.</li>
-      <li><strong>Policy-as-Code:</strong> OPA blocks violations regardless of AI "confidence".</li>
+    <h3 class="text-lg font-bold text-[var(--slidev-theme-accents-blue)]">Automated Testing and TDD</h3>
+    <ul class="text-sm mt-2 space-y-2">
+      <li><strong>Coverage-Aware Routing:</strong> `ruflo-testgen` identifies test gaps and routes agents to cover them.</li>
+      <li><strong>Agentic TDD:</strong> Following a mock-first pattern to iterate until code passes a rigid "test contract".</li>
     </ul>
   </div>
 </div>
@@ -118,17 +54,157 @@ LLMs are non-deterministic, posing risks to secure, repeatable builds.
 layout: default
 ---
 
-# 1.6 MCP: The New "USB-C"
+# Agent Roles: Review and Project Memory
 
-**Model Context Protocol**: Unified extensibility, but new attack surfaces.
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div>
+    <h3 class="font-bold text-[var(--slidev-theme-accents-yellow)] text-lg mb-4">AI-Powered Security Review</h3>
+    <ul class="text-sm space-y-3">
+      <li><strong>The GARE Model:</strong> (Gather, Analyze, Recommend, Execute) Orchestrators spawn specialist agents simultaneously (e.g., Auth Reviewer, Secret Scanner).</li>
+      <li><strong>Context-Aware Reasoning:</strong> Unlike SAST, AI reviewers detect complex attack-path chaining and business logic flaws.</li>
+    </ul>
+  </div>
+  <div>
+    <h3 class="font-bold text-[var(--slidev-theme-accents-yellow)] text-lg mb-4">Documentation & Memory</h3>
+    <ul class="text-sm space-y-3">
+      <li><strong>ADR Synthesis:</strong> Generating Architecture Decision Records for design tracking.</li>
+      <li><strong>AgentDB Namespaces:</strong> Preserving context across sessions (e.g., `security-findings`, `test-gaps`) ensuring vulnerabilities are not "forgotten".</li>
+    </ul>
+  </div>
+</div>
 
-**Opportunities**: Tool reuse across harnesses, contextual richness (Slack, Jira, Docs).
+---
+layout: default
+---
 
-**Risks**:
-- **Excessive Agency**: Indirect Prompt Injection via 3rd-party code.
-- **Numeric Input DoS**: Unsanitized inputs (e.g., `1; rm -rf /`).
+# The Agent Harness
 
-**The 3-Gate Mitigation Pattern**:
-1. Pre-storage PII Gate
-2. Sanitization Gate
-3. Prompt-Injection Gate
+The runtime environment bridging the LLM and the local dev environment.
+
+<div class="mt-4 p-4 bg-[var(--slidev-theme-code-background)] rounded-lg">
+  <h3 class="font-bold text-[var(--slidev-theme-accents-teal)] mb-4">Primary Harnesses</h3>
+  <ul class="text-sm space-y-4">
+    <li><strong>Claude Code:</strong> A specialized CLI emphasizing skill-based extensibility, allowing developers to mount security skills and MCP plugins.</li>
+    <li><strong>GitHub Copilot & Gemini CLI:</strong> Deep IDE integration focusing on "autofix" capabilities integrated natively with cloud-native workflows.</li>
+  </ul>
+</div>
+
+<div class="mt-6 p-4 border border-[var(--slidev-theme-code-border)] rounded-lg">
+  <h3 class="font-bold text-white mb-2">Config Bundles (e.g., `everything-claude-code`)</h3>
+  <p class="text-sm text-gray-300">Reduce "prompt engineering fatigue" by pre-loading Personas, Allowed Tools, and Safety Guards.</p>
+</div>
+
+---
+layout: default
+---
+
+# Context Architecture
+
+Without structured context, agents suffer from "context drift" and hallucinations.
+
+<div class="grid grid-cols-3 gap-4 mt-4">
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center">
+    <div class="text-lg font-bold text-white mb-2">1. System Layer</div>
+    <div class="text-sm text-gray-400">The base persona and safety rules defined by the harness.</div>
+  </div>
+  
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center" data-id="ctx-proj">
+    <div class="text-lg font-bold text-[var(--slidev-theme-accents-teal)] mb-2">2. Project Layer</div>
+    <div class="text-sm text-gray-400">Constraints stored in `CLAUDE.md` or `agents.md` defining tech stack and "hard" rules.</div>
+  </div>
+  
+  <div class="bg-[var(--slidev-theme-code-background)] p-4 rounded-lg text-center">
+    <div class="text-lg font-bold text-white mb-2">3. Task Layer</div>
+    <div class="text-sm text-gray-400">The immediate prompt or spec defining the current session goal.</div>
+  </div>
+</div>
+
+<FancyArrow from="(400, 420)" to="(400, 320)" color="var(--slidev-theme-accents-teal)" width="2" />
+
+<div class="mt-4 text-sm">
+  <strong>Context Governance:</strong> Agents must use deduplication and ranking tools (`grep`, `glob`) to prevent context window saturation.
+</div>
+
+---
+layout: default
+---
+
+# Spec-Driven vs. Prompt-Driven Development
+
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div>
+    <h3 class="text-xl font-bold text-[var(--slidev-theme-accents-red)] mb-4">Prompt-Driven</h3>
+    <ul class="text-sm space-y-3 text-gray-300">
+      <li>Conversational and exploratory.</li>
+      <li>Fast for prototyping, but non-deterministic.</li>
+      <li>Security rigor is often skipped.</li>
+      <li>Intent is buried in chat history, making it difficult to audit.</li>
+    </ul>
+  </div>
+  
+  <div>
+    <h3 class="text-xl font-bold text-[var(--slidev-theme-accents-teal)] mb-4">Spec-Driven</h3>
+    <ul class="text-sm space-y-3 text-gray-300">
+      <li>Grounded in durable, version-controlled artifacts (e.g., `spec.md`).</li>
+      <li>The agent treats the spec as a "source of truth".</li>
+      <li>Implementations are verified against automated test contracts.</li>
+    </ul>
+  </div>
+</div>
+
+---
+layout: default
+---
+
+# The Non-Determinism Problem
+
+The inherent non-determinism of LLMs poses a risk to **Repeatability Engineering** (producing the same secure build from the same source).
+
+<div class="mt-4 space-y-4">
+  <div class="p-4 border-l-4 border-[var(--slidev-theme-accents-blue)] bg-[var(--slidev-theme-code-background)]">
+    <h3 class="font-bold text-lg mb-2">Deterministic Gates</h3>
+    <ul class="text-sm list-disc ml-6">
+      <li><strong>Linter Enforcement:</strong> Forcing agents to pass strict rules (ESLint security plugins) before commits.</li>
+      <li><strong>Smoke Tests:</strong> Verifying generated outputs match signed manifests or "smoke tests" defining minimum safety.</li>
+    </ul>
+  </div>
+
+  <div class="p-4 border-l-4 border-[var(--slidev-theme-accents-yellow)] bg-[var(--slidev-theme-code-background)]">
+    <h3 class="font-bold text-lg mb-2">Clamping Agent Behavior</h3>
+    <ul class="text-sm list-disc ml-6">
+      <li><strong>Type Systems:</strong> TypeScript/Mypy prevents agents from hallucinating incorrect data types.</li>
+      <li><strong>Policy-as-Code:</strong> Open Policy Agent (OPA) blocks policy violations regardless of AI "confidence".</li>
+    </ul>
+  </div>
+</div>
+
+---
+layout: default
+---
+
+# MCP: The New "USB-C" for Agents
+
+The **Model Context Protocol (MCP)** unified tool integration, introducing both opportunities and critical new attack surfaces.
+
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div>
+    <h3 class="font-bold text-lg text-[var(--slidev-theme-accents-teal)] mb-3">Opportunities</h3>
+    <ul class="text-sm space-y-2 text-gray-300">
+      <li><strong>Tool Reuse:</strong> Write an MCP server once, use it across Claude, Copilot, and custom agents.</li>
+      <li><strong>Contextual Richness:</strong> Ingest live API docs, Slack history, and Jira tickets.</li>
+    </ul>
+  </div>
+  
+  <div>
+    <h3 class="font-bold text-lg text-[var(--slidev-theme-accents-red)] mb-3">Risks</h3>
+    <ul class="text-sm space-y-2 text-gray-300">
+      <li><strong>Excessive Agency:</strong> Indirect prompt injection via 3rd-party dependencies tricking an agent to execute commands.</li>
+      <li><strong>Numeric Input DoS:</strong> Insecure inputs (e.g., `prNumber: "1; rm -rf /"`) leading to RCE if unsanitized.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="mt-4 bg-[var(--slidev-theme-code-background)] p-4 rounded text-sm">
+  <strong>The 3-Gate Mitigation Pattern (ruflo-aidefence):</strong>
+  1. Pre-storage PII Gate → 2. Sanitization Gate → 3. Prompt-Injection Gate
+</div>
