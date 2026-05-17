@@ -1,0 +1,14 @@
+{
+  "name": "DevSecOpsResearch",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/merge_report.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Amin Zibayi",
+  "license": "",
+  "packageManager": "pnpm@10.24.0"
+}
