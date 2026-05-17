@@ -12,3 +12,5 @@ AI_Native_DevSecOps.md
 .vite-inspect
 .remote-assets
 components.d.ts
+
+.playwright-mcp/
