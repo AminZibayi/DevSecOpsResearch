@@ -4,3 +4,5 @@ source/
 *.log
 AI_Native_DevSecOps.md
 .agents/
+pages/
+slides.md
