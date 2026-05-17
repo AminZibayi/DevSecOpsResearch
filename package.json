@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/merge_report.js",
+    "merge": "node scripts/merge_report.js",
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
     "lint": "pnpm format && markdownlint \"content/*.md\"",
@@ -20,5 +23,12 @@
     "husky": "^9.1.7",
     "markdownlint-cli": "^0.48.0",
     "prettier": "^3.8.3"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.15.2",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-theme-the-unnamed": "^0.0.23",
+    "vue": "^3.5.33"
   }
 }

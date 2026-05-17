@@ -7,3 +7,8 @@ dist/
 .DS_Store
 pnpm-lock.yaml
 AI_Native_DevSecOps.md
+
+*.local
+.vite-inspect
+.remote-assets
+components.d.ts
