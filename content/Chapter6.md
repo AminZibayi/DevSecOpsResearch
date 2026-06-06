@@ -78,3 +78,40 @@ The final phase introduces agentic reasoning and autonomous remediation.
 | **Level 3** | **Defined**    | Monorepo (Nx) adoption, SBOM generation, centralized policy-as-code.                     |
 | **Level 4** | **Managed**    | Agentic PR reviews, diff-aware risk scoring, signed provenance for artifacts.            |
 | **Level 5** | **Optimizing** | **AI-Native**: Self-healing CI, autonomous incident response, 3-gate runtime protection. |
+
+## 6.5 SBOM Risk Scoring Methodology
+
+A critical component of supply chain integrity is quantifying the risk of discovered vulnerabilities. The library's `analyzing-sbom-for-supply-chain-vulnerabilities` skill provides a structured scoring methodology:
+
+**Component Risk Score Calculation:**
+
+```
+Component Risk = max(CVSS scores of all CVEs affecting the component)
+
+Weighted Risk = Component Risk * Dependency Factor
+where Dependency Factor = 1.0 + (0.1 × in_degree)
+```
+
+The `in_degree` (number of dependents) amplifies risk — a vulnerability in a component that 47 other packages depend on has a Dependency Factor of 5.7, making it a higher organizational priority than a vulnerability with the same CVSS score but only 2 dependents.
+
+**Overall SBOM Risk:**
+
+```
+Overall SBOM Risk = weighted average of all component risks
+                    weighted by dependency centrality
+```
+
+**Blast Radius Metrics** for risk prioritization:
+
+- **In-degree**: How many components depend on this one (high = high blast radius)
+- **Shortest path to root**: Distance from application entry point (closer = more exploitable)
+- **Betweenness centrality**: Components that sit on many dependency paths (bottleneck risk)
+
+**Risk Thresholds:**
+
+- **CRITICAL**: CVSS ≥ 9.0, or CVE listed in CISA KEV (Known Exploited Vulnerabilities)
+- **HIGH**: CVSS ≥ 7.0
+- **MEDIUM**: CVSS ≥ 4.0
+- **LOW**: CVSS < 4.0
+
+NVD API integration supports dual lookup paths: precise CPE name matching (most accurate) and keyword search (broader). Rate limits: 5 requests/30 seconds without an API key, 50 requests/30 seconds with a free NVD API key. Patchou (CISA KEV) cross-referencing should be applied at the PASS/FAIL gate level — any component with a CISA KEV-listed CVE must trigger an automatic pipeline failure regardless of CVSS score.

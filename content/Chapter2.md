@@ -30,16 +30,31 @@ The STRIDE threat model, originally developed by Microsoft, provides a structure
 
 The OWASP Top 10 for LLM Applications (2025) provides the definitive baseline for securing agentic systems. When integrated into a DevSecOps pipeline, these risks manifest as direct threats to the integrity of the software supply chain.
 
-1.  **LLM01:2025 Prompt Injection**: The primary vector for hijacking agent behavior. In a pipeline, this occurs when an agent reads hostile data (code, tickets, logs) that contains "jailbreak" instructions.
-2.  **LLM02:2025 Sensitive Information Disclosure**: The risk of agents exposing secrets, PII, or internal intellectual property through prompts, unredacted log files, or training data membership.
-3.  **LLM03:2025 Supply Chain**: Specific to AI, this includes **Slopsquatting** (hallucinated package names), vulnerable LoRA adapters, and weak model provenance.
-4.  **LLM04:2025 Data and Model Poisoning**: Manipulation of pre-training or fine-tuning data to introduce backdoors or "sleeper agents" into the model.
-5.  **LLM05:2025 Improper Output Handling**: Occurs when the pipeline trusts agent-generated code blindly. If an agent proposes a diff that includes a shell injection vulnerability and the CI fails to catch it, the vulnerability is promoted.
-6.  **LLM06:2025 Excessive Agency**: Giving agents more power (tools, permissions, autonomy) than necessary. An agent tasked with "fixing a bug" should not have permission to delete infrastructure.
-7.  **LLM07:2025 System Prompt Leakage**: Disclosure of instructions or instructions-as-code used to steer model behavior, which can reveal sensitive system architecture or internal rules.
-8.  **LLM08:2025 Vector and Embedding Weaknesses**: Vulnerabilities in RAG systems where weaknesses in how vectors are stored or retrieved can lead to unauthorized data access or context leakage.
-9.  **LLM09:2025 Misinformation**: Hallucinations and overreliance where the LLM produce false but credible-appearing information, potentially leading to operational disruptions.
+1. **LLM01:2025 Prompt Injection**: The primary vector for hijacking agent behavior. In a pipeline, this occurs when an agent reads hostile data (code, tickets, logs) that contains "jailbreak" instructions.
+2. **LLM02:2025 Sensitive Information Disclosure**: The risk of agents exposing secrets, PII, or internal intellectual property through prompts, unredacted log files, or training data membership.
+3. **LLM03:2025 Supply Chain**: Specific to AI, this includes **Slopsquatting** (hallucinated package names), vulnerable LoRA adapters, and weak model provenance.
+4. **LLM04:2025 Data and Model Poisoning**: Manipulation of pre-training or fine-tuning data to introduce backdoors or "sleeper agents" into the model.
+5. **LLM05:2025 Improper Output Handling**: Occurs when the pipeline trusts agent-generated code blindly. If an agent proposes a diff that includes a shell injection vulnerability and the CI fails to catch it, the vulnerability is promoted.
+6. **LLM06:2025 Excessive Agency**: Giving agents more power (tools, permissions, autonomy) than necessary. An agent tasked with "fixing a bug" should not have permission to delete infrastructure.
+7. **LLM07:2025 System Prompt Leakage**: Disclosure of instructions or instructions-as-code used to steer model behavior, which can reveal sensitive system architecture or internal rules.
+8. **LLM08:2025 Vector and Embedding Weaknesses**: Vulnerabilities in RAG systems where weaknesses in how vectors are stored or retrieved can lead to unauthorized data access or context leakage.
+9. **LLM09:2025 Misinformation**: Hallucinations and overreliance where the LLM produce false but credible-appearing information, potentially leading to operational disruptions.
 10. **LLM10:2025 Unbounded Consumption**: Attacks designed to deplete resources, including "Denial of Wallet" via high-volume API inferences.
+
+### 2.3.1 Mapped ATT&CK Techniques: From Pipeline to Framework
+
+The AI-native threat model maps directly to established adversary frameworks. The following ATT&CK techniques are most relevant to DevSecOps pipeline compromise, cross-referenced with the open-source skill library's framework coverage:
+
+| Pipeline Threat                                          | Relevant ATT&CK Technique                                   | Domain Context                                                                 |
+| -------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Compromised CI build injects malicious artifacts         | **T1195.002** (Compromise Software Supply Chain)            | devsecops (16 skills), supply-chain-attack detection (5 skills)                |
+| Trojanized dependency with supply-chain backdoor         | **T1195.001** (Compromise Software Dependencies)            | hunting-for-supply-chain-compromise, analyzing-supply-chain-malware-artifacts  |
+| Attacker escalates via compromised CI runner credentials | **T1552.001** (Unsecured Credentials: Credentials In Files) | detecting-compromised-cloud-credentials, performing-cloud-incident-containment |
+| Container escape from compromised build environment      | **T1610** (Exploitation for Defense Evasion: VM Escape)     | detecting-container-escape-attempts, container-security (26 skills)            |
+| Implanted backdoor in container base image               | **T1525** (Implant Internal Image)                          | securing-container-registry-images, securing-container-registry-with-harbor    |
+| Adversary executes commands in compromised build         | **T1059.004** (Unix Shell)                                  | detecting-living-off-the-land-attacks, hunting-for-lolbins-execution           |
+
+The NIST CSF 2.0 framework adds a second dimension: the 16 DevSecOps skills in the library primarily target **Protect (PR.PS-01, PR.PS-04)** and **Govern (GV.SC-07)** functions, with Detect and Respond functions addressed by complementary skills in the security-operations and incident-response domains (totalling 200+ Detect skills and 160+ Respond skills across the library). The ATLAS framework contributes the AI-specific overlay: **AML.T0010** (ML Supply Chain Compromise) and **AML.T0104** (Data Poisoning of ML Model) map to LLM03 and LLM04 respectively, while MITRE D3FEND adds **Software Update**, **Restore Software**, and **Restore Object** for supply-chain verification countermeasures.
 
 ## 2.4 AI-Specific Attack Vectors
 

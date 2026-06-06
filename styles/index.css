@@ -1,0 +1,9 @@
+/* Center mermaid diagrams */
+.slidev-layout .mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+.slidev-layout .mermaid svg {
+  max-width: 100%;
+}
