@@ -39,7 +39,9 @@ jobs:
         run: pnpm install
 
       - name: Build Slidev
-        run: pnpm run build --base /${{ github.event.repository.name }}/
+        run: |
+          sed -i 's/download: true/download: false/' slides.md
+          pnpm run build --base /${{ github.event.repository.name }}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
